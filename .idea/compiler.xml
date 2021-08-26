@@ -9,5 +9,8 @@
         <module name="BancoCreditos" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BancoCreditos" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -32,9 +32,15 @@ public class Banco {
         }
         return interes;
     }
+    public String[] calcularCredito(int[] creditos){
+       String montoTotal= this.obtenerMontoTotal(creditos);
+       String montoMensual=this.obtenerMontoMensual(creditos);
+       String[] resultado={montoTotal,montoMensual};
+       return resultado;
+    }
     // suponiendo que el credito en la posicion 1 es el monto, y en la posicion 2 es el numero de cuotas
     public int calcularMontoTotal(int[] creditos){
-        double interes= this.derivarMontoCreditos(creditos[0],creditos[1]);
+        double interes= derivarMontoCreditos(creditos[0],creditos[1]);
         int montoTotal= (int)(interes*creditos[0]);
         int aproximarNumero= (int)Math.ceil(interes); //aproxima el numero al entero siguiente
         int redondearNumero= (int)Math.floor(interes); //mantiene el numero en el entero actual
@@ -67,4 +73,6 @@ public class Banco {
         }
 
     }
+
+
 }
